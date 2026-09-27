@@ -1,3 +1,11 @@
 node_modules
 dist
 .DS_Store
+# 개인 데이터와 작업 산출물은 올리지 않음
+Claude outputs/
+*.log
+*.bak-*
+incremental-state.json
+sermon-catalog.json
+sermon-catalog-summary.txt
+mcp-apple-notes/
