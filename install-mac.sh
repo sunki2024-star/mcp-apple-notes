@@ -19,7 +19,7 @@ mkdir -p "$AGENTS"
 sed "s#__HOME__#$HOME#g; s#$HOME/mcp-apple-notes#$PROJECT_DIR#g" launchd/com.sunki.noteindex.plist > "$AGENTS/com.sunki.noteindex.plist"
 launchctl unload "$AGENTS/com.sunki.noteindex.plist" 2>/dev/null || true
 launchctl load "$AGENTS/com.sunki.noteindex.plist"
-chmod +x run-incremental-index.sh watchdog.sh
+chmod +x run-incremental-index.sh watchdog.sh backup-index.sh
 
 echo
 echo "설치 끝. 다음 단계:"

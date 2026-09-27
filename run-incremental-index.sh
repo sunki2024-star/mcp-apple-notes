@@ -19,6 +19,10 @@ caffeinate -dims "$HOME_DIR/.bun/bin/bun" run incremental-index.ts >> "$LOG" 2>&
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] 증분 색인 실행 종료" >> "$LOG"
 
+# 색인이 끝난 뒤, 완성된 상태를 iCloud Drive로 백업한다.
+bash "$PROJECT_DIR/backup-index.sh"
+
+
 # 끝난 뒤: 10분 이상 아무도 맥을 쓰지 않았다면(예약으로 깨운 경우) 다시 잠자기로 돌린다.
 # 누가 맥을 쓰고 있으면 그대로 둔다.
 IDLE=$(ioreg -c IOHIDSystem | awk '/HIDIdleTime/ {print int($NF/1000000000); exit}')
