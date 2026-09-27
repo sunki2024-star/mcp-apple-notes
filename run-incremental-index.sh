@@ -1,6 +1,6 @@
 #!/bin/bash
 # Apple Notes 증분 색인 실행 스크립트
-# launchd(com.sunki.noteindex.plist)가 매일 이 스크립트를 실행한다.
+# launchd(com.sunki.noteindex.plist)가 매주 화요일 오전 11시에 이 스크립트를 실행한다.
 
 HOME_DIR="$HOME"
 PROJECT_DIR="$HOME_DIR/mcp-apple-notes"
