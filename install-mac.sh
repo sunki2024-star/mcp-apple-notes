@@ -14,7 +14,7 @@ fi
 echo "2) 패키지 설치"
 cd "$PROJECT_DIR" && "$HOME/.bun/bin/bun" install
 
-echo "3) 매주 화요일 오전 11시 증분 색인 예약"
+echo "3) 매주 월요일 새벽 3시 증분 색인 예약"
 mkdir -p "$AGENTS"
 sed "s#__HOME__#$HOME#g; s#$HOME/mcp-apple-notes#$PROJECT_DIR#g" launchd/com.sunki.noteindex.plist > "$AGENTS/com.sunki.noteindex.plist"
 launchctl unload "$AGENTS/com.sunki.noteindex.plist" 2>/dev/null || true
